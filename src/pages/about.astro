@@ -1,62 +1,79 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Header2 from '../components/Header2.astro';
+
+const SITE_TITLE = 'About Me | Pixel Valley Devlog';
+const SITE_DESCRIPTION = 'Get to know the developer behind Pixel Valley';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body>
+    <Header />
+    <main class="max-w-3xl mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Hey there! 👋</h1>
+            <p class="text-xl text-gray-600">I'm Mike, a web developer by day and game dev enthusiast by night</p>
+        </div>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+            <Header2 text="👨‍💻 About Me" />
+            <div class="prose max-w-none">
+                <p>Hey! I'm Mike, a web developer currently working at <a href="https://zevoy.com" target="_blank" rel="noopener" class="text-green-600 hover:underline">zevoy.com</a>. I've been in the tech world for more than 10 years, and I absolutely love building things that live on the internet.</p>
+                
+                <p>When I'm not coding for work, you'll find me working on my passion project - Pixel Valley. It's my take on the classic farming sim genre, inspired by games like Stardew Valley. This devlog is where I document my journey of learning game development while building something I'm truly passionate about.</p>
+            </div>
+        </div>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <Header2 text="💻 Tech Stack" />
+                <p class="mb-4">Here's some of the tech I work with regularly:</p>
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Ruby on Rails
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Golang
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                        React
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                        Tailwind CSS
+                    </li>
+                </ul>
+            </div>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <Header2 text="🎮 Current Obsession" />
+                <p class="mb-4">When I'm not coding, you can find me:</p>
+                <ul class="space-y-2">
+                    <li>🌱 Tending to my virtual farm in Pixel Valley</li>
+                    <li>🎮 Playing indie games for inspiration</li>
+                    <li>📚 Learning game development with Unity</li>
+                    <li>☕ Enjoying a good cup of coffee</li>
+                </ul>
+            </div>
+        </div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <Header2 text="💌 Let's Connect" />
+            <p class="mb-6">Want to chat about web development, game design, or just say hi? I'd love to hear from you!</p>
+            <a href="mailto:m.navrotskiy@gmail.com" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                Say Hello 👋
+            </a>
+        </div>
+    </main>
+    <Footer />
+</body>
+</html>

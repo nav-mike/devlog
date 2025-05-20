@@ -1,0 +1,102 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Header2 from '../components/Header2.astro';
+
+const SITE_TITLE = 'Development Roadmap | Pixel Valley Devlog';
+const SITE_DESCRIPTION = 'Track the development progress of our Stardew Valley-inspired farming game';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body>
+    <Header />
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8">🚧 Development Roadmap</h1>
+        
+        <div class="space-y-12">
+            <!-- Current Focus -->
+            <section class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <Header2 text="🔄 In Progress" className="!mt-0" />
+                </div>
+                <ul class="space-y-4 pl-6 list-disc">
+                    <li class="flex items-start gap-2">
+                        <input type="checkbox" class="mt-1" />
+                        <div>
+                            <span class="font-medium">Learn Unity Basics</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Complete Unity tutorials and understand the interface</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <input type="checkbox" class="mt-1" />
+                        <div>
+                            <span class="font-medium">Character Movement</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Implement basic player controls and animations</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Up Next -->
+            <section class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <Header2 text="📅 Up Next" className="!mt-0" />
+                </div>
+                <ul class="space-y-4 pl-6 list-disc">
+                    <li>Basic Farming System</li>
+                    <li>Day/Night Cycle</li>
+                    <li>Inventory System</li>
+                </ul>
+            </section>
+
+            <!-- Future Plans -->
+            <section class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <Header2 text="🔮 Future Plans" className="!mt-0" />
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h3 class="font-semibold mb-2">Core Mechanics</h3>
+                        <ul class="space-y-2 pl-4 list-disc">
+                            <li>Farming & Crops</li>
+                            <li>Fishing System</li>
+                            <li>Mining & Combat</li>
+                            <li>Crafting System</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">World & Content</h3>
+                        <ul class="space-y-2 pl-4 list-disc">
+                            <li>Villager Relationships</li>
+                            <li>Festivals & Events</li>
+                            <li>Farm Customization</li>
+                            <li>Multiplayer (maybe?)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Completed -->
+            <section class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <Header2 text="✅ Completed" className="!mt-0" />
+                </div>
+                <ul class="space-y-2 pl-6 list-disc">
+                    <li class="line-through text-gray-500">Set up development environment</li>
+                    <li class="line-through text-gray-500">Create basic project structure</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <Footer />
+</body>
+</html>

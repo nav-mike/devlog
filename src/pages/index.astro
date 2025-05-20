@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Header2 from '../components/Header2.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -14,17 +15,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<Header />
 		<main>
 			<h1>🌱 Welcome to Pixel Valley Devlog</h1>
-			<div class="game-intro">
+			<div class="flex flex-col gap-4">
 				<p>Hello there! I'm on an exciting journey to create a Stardew Valley-inspired farming simulation game. This devlog will document my progress, challenges, and discoveries as I build this game from the ground up.</p>
 				
-				<h2>📜 Latest Updates</h2>
+				<Header2 text="📜 Latest Updates" />
 				<ul class="update-list">
 					<li><a href="/devlog/first-steps">Getting Started: Laying the Foundation</a></li>
 					<li><a href="/devlog/character-design">Character Design & Animation</a></li>
 					<li><a href="/devlog/farming-mechanics">Implementing Farming Mechanics</a></li>
 				</ul>
 
-				<h2>🎮 About the Game</h2>
+				<Header2 text="🎮 About the Game" />
 				<p>Inspired by the charm of Stardew Valley, my game will feature:</p>
 				<ul>
 					<li>🌾 Farming and crop cultivation</li>
@@ -34,7 +35,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					<li>📜 Engaging storyline and quests</li>
 				</ul>
 
-				<h2>🔧 Development Stack</h2>
+				<Header2 text="🔧 Development Stack" />
 				<ul>
 					<li>Game Engine: Godot</li>
 					<li>Art: Aseprite for pixel art</li>
@@ -42,7 +43,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					<li>Devlog: Astro</li>
 				</ul>
 
-				<h2>📅 Development Roadmap</h2>
+				<Header2 text="📅 Development Roadmap" />
 				<ol>
 					<li>Core farming mechanics</li>
 					<li>Character movement and interactions</li>

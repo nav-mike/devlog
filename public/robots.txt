@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devlog-snowy.vercel.app/sitemap.xml
+
+# Disallow crawling of admin and private pages
+Disallow: /admin/
+Disallow: /private/
+
+# Crawl-delay: 10  # Uncomment and adjust if needed to limit crawl rate

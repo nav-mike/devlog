@@ -1,34 +1,77 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../consts';
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  tags?: string[];
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
+const { 
+  title, 
+  description = SITE_DESCRIPTION, 
+  image = '/blog-placeholder-1.jpg',
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author = 'Mikhail Navrotskii',
+  tags = []
+} = Astro.props;
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const pageUrl = new URL(Astro.url.pathname, SITE_URL).toString();
+const imageUrl = new URL(image, SITE_URL).toString();
+
+// Generate structured data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": type === 'article' ? 'BlogPosting' : 'WebSite',
+  "headline": title,
+  "description": description,
+  "url": pageUrl,
+  "inLanguage": "en-US",
+  ...(type === 'article' && {
+    "author": {
+      "@type": "Person",
+      "name": author,
+      "url": SITE_URL
+    },
+    "datePublished": publishedTime,
+    "dateModified": modifiedTime || publishedTime,
+    "keywords": tags.join(', '),
+    "image": imageUrl
+  }),
+  "publisher": {
+    "@type": "Person",
+    "name": author,
+    "url": SITE_URL
+  }
+};
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#4f46e5" />
+
+<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="sitemap" href="/sitemap-index.xml" />
-<link
-	rel="alternate"
-	type="application/rss+xml"
-	title={SITE_TITLE}
-	href={new URL('rss.xml', Astro.site)}
-/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+
+<!-- Sitemap & RSS -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL('rss.xml', SITE_URL)} />
+
+<!-- Generator -->
 <meta name="generator" content={Astro.generator} />
 
-<!-- Font preloads -->
+<!-- Preload Critical Resources -->
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
 <link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
 
@@ -36,19 +79,34 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
+<title>{title} | {SITE_TITLE}</title>
+<meta name="title" content={`${title} | ${SITE_TITLE}`} />
 <meta name="description" content={description} />
+<meta name="author" content={author} />
+<meta name="keywords" content={
+  tags.length > 0 
+    ? tags.join(', ') 
+    : 'game development, indie games, pixel art, unity, gamedev, stardew valley, farming simulation, devlog'
+} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={pageUrl} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:locale" content="en_US" />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:creator" content="@yourtwitterhandle" />
+
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />

@@ -3,13 +3,13 @@ const today = new Date();
 const currentYear = today.getFullYear();
 ---
 
-<footer class="bg-gray-900 text-white py-8 sm:py-12 px-4"> {/* Adjusted py */}
+<footer class="bg-gray-900 text-white py-8 sm:py-12 px-4">
     <div class="container mx-auto max-w-6xl">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <!-- About Section -->
             <div class="space-y-4">
-                <h3 class="text-xl sm:text-2xl font-bold text-green-400">Pixel Valley Devlog</h3> {/* Adjusted text size for smaller screens */}
-                <p class="text-gray-300 text-sm sm:text-base">Follow my journey as I build a Stardew Valley-inspired farming game from scratch.</p> {/* Adjusted text size */}
+                <h3 class="text-xl sm:text-2xl font-bold text-green-400">Pixel Valley Devlog</h3>
+                <p class="text-gray-300 text-sm sm:text-base">Follow my journey as I build a Stardew Valley-inspired farming game from scratch.</p>
                 <div class="flex space-x-4 pt-2">
                     <a href="https://github.com/nav-mike" target="_blank" rel="noopener noreferrer" 
                        class="text-gray-300 hover:text-white transition-colors p-1"  /* Added p-1 */
@@ -30,33 +30,33 @@ const currentYear = today.getFullYear();
 
             <!-- Quick Links -->
             <div>
-                <h4 class="text-base sm:text-lg font-semibold mb-4 text-green-400">Quick Links</h4> {/* Adjusted text size */}
-                <ul class="space-y-1 sm:space-y-2"> {/* Adjusted spacing */}
-                    <li><a href="/" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">Home</a></li> {/* Added py-1 and inline-block */}
-                    <li><a href="/devlog" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">Devlog</a></li> {/* Added py-1 and inline-block */}
-                    <li><a href="/about" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">About</a></li> {/* Added py-1 and inline-block */}
-                    <li><a href="/roadmap" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">Roadmap</a></li> {/* Added py-1 and inline-block */}
+                <h4 class="text-base sm:text-lg font-semibold mb-4 text-green-400">Quick Links</h4>
+                <ul class="space-y-1 sm:space-y-2">
+                    <li><a href="/" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">Home</a></li>
+                    <li><a href="/devlog" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">Devlog</a></li>
+                    <li><a href="/about" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">About</a></li>
+                    <li><a href="/roadmap" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">Roadmap</a></li>
                 </ul>
             </div>
 
             <!-- Resources -->
             <div>
-                <h4 class="text-base sm:text-lg font-semibold mb-4 text-green-400">Resources</h4> {/* Adjusted text size */}
-                <ul class="space-y-1 sm:space-y-2"> {/* Adjusted spacing */}
-                    <li><a href="https://unity.com/" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">Unity</a></li> {/* Added py-1 and inline-block */}
-                    <li><a href="https://www.aseprite.org/" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">Aseprite</a></li> {/* Added py-1 and inline-block */}
-                    <li><a href="https://www.bfxr.net/" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">BFXR</a></li> {/* Added py-1 and inline-block */}
-                    <li><a href="https://lmms.io/" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">LMMS</a></li> {/* Added py-1 and inline-block */}
+                <h4 class="text-base sm:text-lg font-semibold mb-4 text-green-400">Resources</h4>
+                <ul class="space-y-1 sm:space-y-2">
+                    <li><a href="https://unity.com/" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">Unity</a></li>
+                    <li><a href="https://www.aseprite.org/" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">Aseprite</a></li>
+                    <li><a href="https://www.bfxr.net/" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">BFXR</a></li>
+                    <li><a href="https://lmms.io/" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors py-1 inline-block">LMMS</a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Bottom Bar -->
-        <div class="border-t border-gray-800 pt-6 sm:pt-8 text-center"> {/* Adjusted pt */}
-            <p class="text-gray-400 mb-2 text-xs sm:text-sm">&copy; {currentYear} Pixel Valley Devlog. All rights reserved.</p> {/* Adjusted text size */}
-            <div class="text-gray-500 text-xs sm:text-sm"> {/* Adjusted text size */}
+        <div class="border-t border-gray-800 pt-6 sm:pt-8 text-center">
+            <p class="text-gray-400 mb-2 text-xs sm:text-sm">&copy; {currentYear} Pixel Valley Devlog. All rights reserved.</p>
+            <div class="text-gray-500 text-xs sm:text-sm">
                 <span>Made with ❤️ and </span>
-                <a href="https://astro.build/" target="_blank" rel="noopener" class="text-green-400 hover:underline py-1 inline-block">Astro</a> {/* Added py-1 and inline-block */}
+                <a href="https://astro.build/" target="_blank" rel="noopener" class="text-green-400 hover:underline py-1 inline-block">Astro</a>
             </div>
         </div>
     </div>

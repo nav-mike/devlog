@@ -74,7 +74,7 @@ This project uses [Playwright](https://playwright.dev/) for end-to-end testing.
     ```sh
     npm run test:e2e
     ```
-    This will run all tests defined in the `tests` directory. Test results, including an HTML report, will be available after the run. By default, reports are saved in `playwright-report`.
+    This will run all tests defined in the `tests` directory. Test results, including an HTML report, will be available after the run. By default, reports are saved in `playwright-report`. These tests are also automatically executed via GitHub Actions on every push and pull request to the `main` branch.
 
 ## 👀 Want to learn more?
 

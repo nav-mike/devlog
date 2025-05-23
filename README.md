@@ -59,6 +59,23 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## ▶️ Running End-to-End Tests
+
+This project uses [Playwright](https://playwright.dev/) for end-to-end testing.
+
+1.  **Install Browsers:**
+    Before running the tests for the first time, or after a Playwright version update, you need to install the necessary browser binaries:
+    ```sh
+    npx playwright install
+    ```
+
+2.  **Run Tests:**
+    To execute the end-to-end tests, run the following command:
+    ```sh
+    npm run test:e2e
+    ```
+    This will run all tests defined in the `tests` directory. Test results, including an HTML report, will be available after the run. By default, reports are saved in `playwright-report`.
+
 ## 👀 Want to learn more?
 
 Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

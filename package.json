@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.6",
@@ -15,5 +16,8 @@
     "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.7.13",
     "tailwindcss": "^4.1.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
   }
 }

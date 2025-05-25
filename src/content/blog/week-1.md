@@ -2,7 +2,7 @@
 title: 'Week 1'
 description: 'Week 1: 19.05.2025 - 25.05.2025'
 pubDate: 'May 25 2025'
-heroImage: '/blog-placeholder-3.jpg'
+heroImage: '/w1.jpg'
 ---
 
 This week was quite difficult. I decided to deep dive into game development.

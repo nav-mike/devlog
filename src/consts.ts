@@ -7,10 +7,9 @@ export const SITE_AUTHOR = "Mikhail Navrotskii";
 
 // Social Media (update with your actual profiles)
 export const SOCIAL_LINKS = {
-  twitter: "https://twitter.com/yourhandle",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourprofile",
-  youtube: "https://youtube.com/yourchannel",
+  twitter: "https://twitter.com/chocascramble",
+  github: "https://github.com/chocascramble",
+  youtube: "https://youtube.com/chocascramble",
 };
 
 // Default SEO Configuration

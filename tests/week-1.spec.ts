@@ -12,7 +12,10 @@ test('week 1 blog post page has correct content', async ({ page }) => {
   await expect(heading).toHaveText('Week 1');
 
   // Check publication date
-  await expect(page.locator('*:has-text("May 25 2025")').first()).toBeVisible();
+  const dateElement = page.locator('div.date time');
+  await expect(dateElement).toBeVisible();
+  await expect(dateElement).toHaveAttribute('datetime', /^2025-05-25/);
+  await expect(dateElement).toHaveText('May 25, 2025');
 
   // Check hero image
   const heroImage = page.locator('img[src="/w1.jpg"]');

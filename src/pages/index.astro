@@ -4,6 +4,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Header2 from '../components/Header2.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+).slice(0, 3)
 ---
 
 <!doctype html>
@@ -20,9 +26,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				
 				<Header2 text="📜 Latest Updates" />
 				<ul class="update-list">
-					<li><a href="/devlog/first-steps">Getting Started: Laying the Foundation</a></li>
-					<li><a href="/devlog/character-design">Character Design & Animation</a></li>
-					<li><a href="/devlog/farming-mechanics">Implementing Farming Mechanics</a></li>
+          {
+            posts.map((post) => (
+            <li>
+              <a href={`/devlog/${post.id}/`}>{post.data.title}</a>
+              </li>
+            ))
+          }
 				</ul>
 
 				<Header2 text="🎮 About the Game" />

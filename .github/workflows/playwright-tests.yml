@@ -2,41 +2,41 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   playwright_tests:
-    name: 'Run Playwright Tests'
+    name: "Run Playwright Tests"
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x] # Or a version suitable for the project
+        node-version: [22.x] # Or a version suitable for the project
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
 
-    - name: Install Dependencies
-      run: npm ci
+      - name: Install Dependencies
+        run: npm ci
 
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
 
-    - name: Run Playwright Tests
-      run: npm run test:e2e
+      - name: Run Playwright Tests
+        run: npm run test:e2e
 
-    - name: Upload Playwright Report
-      if: always() # This ensures the report is uploaded even if tests fail
-      uses: actions/upload-artifact@v4
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      - name: Upload Playwright Report
+        if: always() # This ensures the report is uploaded even if tests fail
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

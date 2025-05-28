@@ -25,7 +25,7 @@ test('week 1 blog post page has correct content', async ({ page }) => {
   // Check CodeMonkey link
   const codeMonkeyLink = page.locator('a[href="https://unitycodemonkey.com/kitchenchaoscourse.php"]');
   await expect(codeMonkeyLink).toBeVisible();
-  await expect(codeMonkeyLink).toHaveText("CodeMonkey's Kitchen Chaos course");
+  await expect(codeMonkeyLink).toHaveText("CodeMonkey’s Kitchen Chaos course");
   await expect(codeMonkeyLink).toHaveAttribute('href', 'https://unitycodemonkey.com/kitchenchaoscourse.php');
 
   // Check game build link

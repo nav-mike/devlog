@@ -31,7 +31,7 @@ test('week 1 blog post page has correct content', async ({ page }) => {
   // Check game build link
   const gameBuildLink = page.locator('a[href="https://github.com/nav-mike/devlog/releases/tag/week1"]');
   await expect(gameBuildLink).toBeVisible();
-  await expect(gameBuildLink).toHaveText(/build.*placeholder/);
+  await expect(gameBuildLink).toHaveText('build');
   await expect(gameBuildLink).toHaveAttribute('href', 'https://github.com/nav-mike/devlog/releases/tag/week1');
 
   // Check for Conclusion heading

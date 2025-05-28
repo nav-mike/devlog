@@ -4,12 +4,12 @@ test('week 1 blog post page has correct content', async ({ page }) => {
   await page.goto('/devlog/week-1');
 
   // Check page title
-  await expect(page).toHaveTitle(/Week 1/);
+  await expect(page).toHaveTitle(/My First Week in Game Development: A Stardew Valley Inspired Game - Weekly Devlog #1/);
 
   // Check main heading
   const heading = page.locator('h1');
   await expect(heading).toBeVisible();
-  await expect(heading).toHaveText('Week 1');
+  await expect(heading).toHaveText('My First Week in Game Development: A Stardew Valley Inspired Game - Weekly Devlog #1');
 
   // Check publication date
   const dateElement = page.locator('div.date time');
@@ -25,12 +25,16 @@ test('week 1 blog post page has correct content', async ({ page }) => {
   // Check CodeMonkey link
   const codeMonkeyLink = page.locator('a[href="https://unitycodemonkey.com/kitchenchaoscourse.php"]');
   await expect(codeMonkeyLink).toBeVisible();
-  await expect(codeMonkeyLink).toHaveText('CodeMonkey');
+  await expect(codeMonkeyLink).toHaveText("CodeMonkey's Kitchen Chaos course");
   await expect(codeMonkeyLink).toHaveAttribute('href', 'https://unitycodemonkey.com/kitchenchaoscourse.php');
 
   // Check game build link
   const gameBuildLink = page.locator('a[href="https://github.com/nav-mike/devlog/releases/tag/week1"]');
   await expect(gameBuildLink).toBeVisible();
-  await expect(gameBuildLink).toHaveText('build');
+  await expect(gameBuildLink).toHaveText(/build.*placeholder/);
   await expect(gameBuildLink).toHaveAttribute('href', 'https://github.com/nav-mike/devlog/releases/tag/week1');
+
+  // Check for Conclusion heading
+  const conclusionHeading = page.locator('h2', { hasText: 'Wrapping Up Week 1 and Looking Ahead' });
+  await expect(conclusionHeading).toBeVisible();
 });

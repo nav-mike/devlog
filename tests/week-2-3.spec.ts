@@ -15,7 +15,7 @@ test('week 2-3 blog post page has correct content', async ({ page }) => {
   const dateElement = page.locator('div.date time');
   await expect(dateElement).toBeVisible();
   await expect(dateElement).toHaveAttribute('datetime', /^2025-06-09/);
-  await expect(dateElement).toHaveText('June 9, 2025'); // Assuming similar formatting to week-1 test
+  await expect(dateElement).toHaveText(/Jun 9, 2025/);
 
   // Check hero image
   const heroImage = page.locator('img[src="/w2-3.png"]');

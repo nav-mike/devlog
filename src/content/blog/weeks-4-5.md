@@ -1,9 +1,18 @@
 ---
-title: 'Devlog #3: Prefab Power, Camera Clarity, and Island Progress (Plus a Well-Deserved Break!)'
-description: 'Weeks 4 & 5 of my Stardew Valley inspired indie game dev journey! Discover my progress with Unity prefabs, camera setup for 2D, and building the main island tilemap, all after a refreshing break.'
-pubDate: '2025-06-23' # Placeholder, user should update
-heroImage: '/blog-placeholder-3.jpg' # Placeholder, user can change
-tags: ["unity", "devlog", "indie game development", "prefabs", "tilemaps", "pixel art", "game development"]
+title: "Devlog #3: Prefab Power, Camera Clarity, and Island Progress (Plus a Well-Deserved Break!)"
+description: "Weeks 4 & 5 of my Stardew Valley inspired indie game dev journey! Discover my progress with Unity prefabs, camera setup for 2D, and building the main island tilemap, all after a refreshing break."
+pubDate: "2025-06-23" # Placeholder, user should update
+heroImage: "/w4-5.png" # Placeholder, user can change
+tags:
+  [
+    "unity",
+    "devlog",
+    "indie game development",
+    "prefabs",
+    "tilemaps",
+    "pixel art",
+    "game development",
+  ]
 ---
 
 Hey everyone, and welcome back to the Pixel Valley devlog! It feels like a little while since my last update, and for good reason – I managed to sneak in a much-needed vacation. But now I’m back, refreshed, and eager to share what I’ve been chipping away at during weeks 4 and 5 of my **Stardew Valley inspired** **Unity game development** journey.
@@ -20,7 +29,7 @@ My learning here was about the basics – understanding how to create them, how 
 
 Next up, I turned my attention to the **main camera**. In a 2D game like the one I'm envisioning, how the camera is set up plays a huge role in the player's experience. My main goals were to define the correct **orthographic size** for the camera – which basically determines how much of the game world is visible on screen – and to ensure that our 2D objects appear in the correct order.
 
-There's nothing quite like placing a character sprite and having it appear *behind* a background element it should be in front of! So, I spent some time learning about and implementing proper **2D layering**. This might involve using Unity's sorting layers or adjusting Z-axis positions. Getting this right is crucial for **visual clarity** and making the game world feel cohesive. It’s a subtle thing, but it makes a big difference.
+There's nothing quite like placing a character sprite and having it appear _behind_ a background element it should be in front of! So, I spent some time learning about and implementing proper **2D layering**. This might involve using Unity's sorting layers or adjusting Z-axis positions. Getting this right is crucial for **visual clarity** and making the game world feel cohesive. It’s a subtle thing, but it makes a big difference.
 
 ## Building Our World: Starting the Main Island Tilemap
 

@@ -1,0 +1,31 @@
+---
+title: "Devlog #4: Tilemap finishing. The main map is ready"
+description: "The week 6 of my indie game dev journey! Discover my progress with main island crafting."
+pubDate: "2025-06-30"
+heroImage: "/w6.png"
+tags: ["unity", "devlog", "indie game development", "tilemaps", "pixel art", "game development"]
+---
+
+import Button from "../../components/Button.astro"
+
+Hello everyone, and welcome to **Week 6 of the Pixel Valley devlogi**! This week was packed with work. After a short summer holiday, I returned to my main job, fixed a couple of bugs, and participated in some meetings. It's great to be back!
+
+At the same time, I didn't forget about the game. My indie game development journey continues! I made huge progress with my **main island map**: I improved the ground and water shapes, added trees, rocks, and flowers, and last but not least, I started to dive deep into collisions: how my hero walks on the ground, bridges, and water. Let's dive into each aspect a bit more.
+
+## Finishing the Map Shapes
+
+You saw the first version of my map. It was a square of ground surrounded by some water. And a house :) I thought about it a lot. I wanted the island to have a more **"natural" shape**. So, after a couple of hours, I definitely liked the new starting island. It has a natural-like shape. How did I do it? I just let my imagination do its job. I tried combining different types of tiles, and voila—a very nice main island with some smaller ones appeared. This is a single layer of tilemap right now (a bit more about it later).
+
+## Working with the map objects
+
+As I already mentioned, I want to have a nice **"natural" world**. So, I added some more objects (a lot :D). Trees and stones are static game objects with a collider (the same goes for street lamps and fences). Green plants, mushrooms, and flowers are a bit simpler. They are game objects but without a collider. I want my hero to be able to walk through them without any blockers. My map probably looks a bit overwhelmed, but I like it. Let's keep it like this, at least for now.
+
+## Starting to Think About Walking on Water
+
+I had no idea how to prevent my hero from walking on the water. My first thought was to use some empty objects like invisible walls. But (thanks, Gemini) fortunately, there's a simpler way to do it. I'll add a new tilemap layer for water and rocks. I'll be able to use a collider to block these areas for my hero. Also, I guess I'll have to fix my tiles a little bit.
+
+## Conclusion
+
+Thanks for following along with this **devlog entry**! I learned so much in Week 6, and I have a lot more to come. As usual, the latest game build is attached below!
+
+<Button href="https://github.com/nav-mike/devlog/releases/download/week6/Week6.zip" />

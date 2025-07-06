@@ -1,0 +1,54 @@
+---
+title: "Devlog #5: fix collisions and player animations"
+description: "The week 7 of my indie game dev journey! Discover my progress with player animations."
+pubDate: "2025-07-06"
+heroImage: "/w7.gif"
+tags: ["unity", "devlog", "indie game development", "tilemaps", "pixel art", "game development"]
+---
+
+import Button from "../../components/Button.astro"
+
+## Playtest My Stardew Valley-Inspired Game!
+
+It's been another productive week bringing my Stardew Valley-like game to life,
+and I'm thrilled to announce that the **first playtest version is ready**!
+You can now explore the map and get a feel for the player movement.
+I'd be incredibly grateful for any feedback you can offer to help me improve the game.
+
+<a href="https://forms.gle/9jCqBTVdYfiE99eh9">Playtest 1</a>
+
+## This Week's Progress Report: Smoothing Out the Gameplay
+
+This past week was all about refining the player's interaction with the environment and making movement feel more natural.
+
+First up, I tackled some crucial collision detection.
+The **water and rock collision system is now fully functional**, meaning our hero can no longer walk through them.
+This makes the world feel much more solid and believable.
+Along with that, I also refined the **borders of these tiles to be more accurate**,
+ensuring a smoother visual experience as the player navigates.
+
+Next, I focused on bringing the character to life with animations.
+I implemented **idle animations** using Unity's general animator,
+adding a nice touch of personality when the player is standing still.
+Walking animations were also a big focus.
+I've added **walking animations for all four directions (up, down, right)**, and for the left direction,
+I'm simply mirroring the right-facing animation with a Y-flip.
+Currently, there's a 20-second gap between animation parts,
+which I'm not entirely happy with for the walking animation.
+This is definitely something I'll be tweaking in the future to make it feel more fluid.
+
+Finally, I squashed an annoying bug related to object layering.
+Previously, the player could sometimes appear behind flowers or plants when their Y-coordinate was negative.
+This was due to the Y-Order script I use for situations where the player walks behind large objects like trees and houses.
+**This bug has now been fixed**, ensuring proper layering and a more visually consistent world.
+
+## Conclusion
+
+I'm really excited about this milestone and can't wait to hear your thoughts on the playtest.
+Your feedback is invaluable as I continue to develop this game!
+
+Thanks for following along with this **devlog entry**!
+I learned so much in Week 7, and I have a lot more to come.
+As usual, the latest game build is attached below!
+
+<Button href="https://github.com/nav-mike/devlog/releases/download/week7/Week7.zip" />

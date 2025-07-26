@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { YouTube } from 'astro-embed';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -7,7 +8,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, youtubeId } = Astro.props;
 ---
 
 <html lang="en">
@@ -75,8 +76,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 						</div>
 						<h1>{title}</h1>
 						<hr />
+						{youtubeId && <div class="m-4">
+							<YouTube id={youtubeId} />
+						</div>}
 					</div>
-					<slot />
+					<div class="flex-column gap-4">
+						<slot />
+					</div>
 				</div>
 			</article>
 		</main>

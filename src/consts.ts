@@ -14,7 +14,7 @@ export const SOCIAL_LINKS = {
 
 // Default SEO Configuration
 export const DEFAULT_IMAGE = "/images/og-default.jpg";
-export const TWITTER_HANDLE = "@yourhandle";
+export const TWITTER_HANDLE = "@chocascramble";
 
 // Categories/Tags for blog posts
 export const CATEGORIES = [
